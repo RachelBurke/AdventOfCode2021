@@ -3,25 +3,25 @@ import java.util.*;
 
 public class Day2Code1
 {
-public static void main(String[] args) {
-   
+    public static void main(String[] args) {
+    
         ArrayList<String> list = new ArrayList<String>();
-        
-   try {
+            
+        try {
             FileInputStream fStream = new FileInputStream("Day2Input.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(fStream));
             
             String strLine;
             
             while ((strLine = br.readLine()) != null)   {
-              list.add(strLine);
+            list.add(strLine);
             }
             
             fStream.close();
-    } catch (Exception e) {
+        } catch (Exception e) {
             System.err.println("Error while reading file: " + e.getMessage());
         }
-        
+            
         int depth = 0;
         int horizontal = 0;
         
@@ -40,5 +40,5 @@ public static void main(String[] args) {
         System.out.println("Depth: " + depth); // 777
         System.out.println("Horizontal: " + horizontal); // 1878
         System.out.println("Product: " + depth * horizontal); // 1459206
-}
+    }
 }
