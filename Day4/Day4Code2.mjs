@@ -68,7 +68,6 @@ for (let n = 0; n < numbersDrawn.length; n++) {
                 board.columns.some(column => column.reduce((x,y) => x + y) == 0)) {
                     let sum = 0;
                     board.rows.forEach(row => sum += row.reduce((x,y) => x + y));
-                    console.log(sum, numbersDrawn[n], sum * numbersDrawn[n])
                     score = sum * numbersDrawn[n];
             }
         }
