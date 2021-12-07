@@ -21,7 +21,7 @@ oxygen = list(binary_lines) # most common
 co2 = list(binary_lines) # least common
 
 for i in range(len(oxygen[0])):
-    zeros, ones = count_bits(binary_lines)
+    zeros, ones = count_bits(oxygen)
     for line in binary_lines:
         # if there are an equal number of bits
         if zeros[i] == ones[i]:
@@ -40,7 +40,7 @@ for i in range(len(oxygen[0])):
                 oxygen.remove(line)
 
 for i in range(len(co2[0])):
-    zeros, ones = count_bits(binary_lines)
+    zeros, ones = count_bits(co2)
     for line in binary_lines:
         # if there are an equal number of bits
         if zeros[i] == ones[i]:
@@ -58,6 +58,6 @@ for i in range(len(co2[0])):
             if(line[i] == "1" and line in co2 and len(co2) > 1):
                 co2.remove(line)
 
-print(oxygen, co2) #['010111100100'] ['101000010001']
-print(int(oxygen[0],2), int(co2[0], 2)) #1508 2577
-print(int(oxygen[0],2) * int(co2[0], 2)) #3886116
+print(oxygen, co2) #['011001100111'] ['101010000100']
+print(int(oxygen[0],2), int(co2[0], 2)) #1639 2692
+print(int(oxygen[0],2) * int(co2[0], 2)) #4412188
