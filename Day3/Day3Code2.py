@@ -20,7 +20,7 @@ def count_bits(lines):
 oxygen = list(binary_lines) # most common
 co2 = list(binary_lines) # least common
 
-for i in range(len(binary_lines[0])):
+for i in range(len(oxygen[0])):
     zeros, ones = count_bits(binary_lines)
     for line in binary_lines:
         # if there are an equal number of bits
@@ -28,22 +28,32 @@ for i in range(len(binary_lines[0])):
             #remove 0 bits from oxygen
             if(line[i] == "0" and line in oxygen and len(oxygen) > 1):
                 oxygen.remove(line)
-            #remove 1 bits from co2
-            if(line[i] == "1" and line in co2 and len(co2) > 1):
-                co2.remove(line)
         #if there are more 0 bits than 1 bits
         elif zeros[i] > ones[i]:
             #remove 1 bits from oxygen
             if(line[i] == "1" and line in oxygen and len(oxygen) > 1):
                 oxygen.remove(line)
-            #remove 0 bits from co2
-            if(line[i] == "0" and line in co2 and len(co2) > 1):
-                co2.remove(line)
         #if there are more 1 bits than 0 bits
         elif ones[i] > zeros[i]:
             #remove 0 bits from oxygen
             if(line[i] == "0" and line in oxygen and len(oxygen) > 1):
                 oxygen.remove(line)
+
+for i in range(len(co2[0])):
+    zeros, ones = count_bits(binary_lines)
+    for line in binary_lines:
+        # if there are an equal number of bits
+        if zeros[i] == ones[i]:
+            #remove 1 bits from co2
+            if(line[i] == "1" and line in co2 and len(co2) > 1):
+                co2.remove(line)
+        #if there are more 0 bits than 1 bits
+        elif zeros[i] > ones[i]:
+            #remove 0 bits from co2
+            if(line[i] == "0" and line in co2 and len(co2) > 1):
+                co2.remove(line)
+        #if there are more 1 bits than 0 bits
+        elif ones[i] > zeros[i]:
             #remove 1 bits from co2
             if(line[i] == "1" and line in co2 and len(co2) > 1):
                 co2.remove(line)
